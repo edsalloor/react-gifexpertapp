@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const AddCategory = ({ setCategories }) => {
+const AddCategoryInput = ({ onAddCategory }) => {
     const [value, setValue] = useState('');
 
     const handleChange = e => setValue(e.target.value);
@@ -9,13 +9,13 @@ const AddCategory = ({ setCategories }) => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        if (!value) return;
-
         const trimmedValue = value.trim();
-        if (trimmedValue) {
-            setCategories(prevCategories => [value, ...prevCategories]);
-            setValue('');
-        };
+        if (!trimmedValue) {
+            return;
+        }
+
+        onAddCategory(trimmedValue);
+        setValue('');
     };
 
     return (
@@ -25,6 +25,7 @@ const AddCategory = ({ setCategories }) => {
         >
             <input
                 type="text"
+                placeholder='Search gif'
                 value={value}
                 onChange={handleChange}
             />
@@ -32,8 +33,8 @@ const AddCategory = ({ setCategories }) => {
     );
 };
 
-AddCategory.propTypes = {
-    setCategories: PropTypes.func.isRequired
+AddCategoryInput.propTypes = {
+    onAddCategory: PropTypes.func.isRequired
 };
 
-export default AddCategory;
+export default AddCategoryInput;

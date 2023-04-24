@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import GifExpertApp from '../GifExpertApp';
 
-jest.mock('../components/AddCategory', () => ({
+jest.mock('../components/AddCategoryInput', () => ({
     __esModule: true,
-    default: () => <div>AddCategory</div>,
+    default: () => <div>AddCategoryInput</div>,
 }));
 
 jest.mock('../components/GifGrid', () => ({
@@ -20,24 +20,24 @@ describe('<GifExpertApp />', () => {
         const initialCategories = ['One Punch Man', 'Dragon Ball'];
         setup({ initialCategories });
 
-        const h2 = screen.getByText('GifExpertApp');
-        const AddCategory = screen.getByText('AddCategory');
+        const heading = screen.getByText('Gif Expert App');
+        const AddCategoryInput = screen.getByText('AddCategoryInput');
         const allGifGrid = screen.getAllByText('GifGrid');
 
-        expect(h2).toBeInTheDocument();
-        expect(AddCategory).toBeInTheDocument();
+        expect(heading).toBeInTheDocument();
+        expect(AddCategoryInput).toBeInTheDocument();
         expect(allGifGrid.length).toBe(initialCategories.length);
     });
 
     it('should not render GifGrid when initialCategories is empty', () => {
         setup({ initialCategories: [] });
 
-        const h2 = screen.getByText('GifExpertApp');
-        const AddCategory = screen.getByText('AddCategory');
+        const heading = screen.getByText('Gif Expert App');
+        const AddCategoryInput = screen.getByText('AddCategoryInput');
         const GifGrid = screen.queryByText('GifGrid');
 
-        expect(h2).toBeInTheDocument();
-        expect(AddCategory).toBeInTheDocument();
+        expect(heading).toBeInTheDocument();
+        expect(AddCategoryInput).toBeInTheDocument();
         expect(GifGrid).not.toBeInTheDocument();
     });
 });

@@ -1,4 +1,4 @@
-import { getGifs } from "../getGifs";
+import { getGifs } from '../getGifs';
 
 const mockedResponse = [{
     id: 'testId1',

@@ -1,13 +1,13 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import AddCategory from '../AddCategory';
+import AddCategoryInput from '../AddCategoryInput';
 
-const setCategories = jest.fn(() => {});
+const onAddCategory = jest.fn(() => {});
 
 const setup = props => render(
-    <AddCategory setCategories={setCategories} { ...props } />
+    <AddCategoryInput onAddCategory={onAddCategory} { ...props } />
 );
 
-describe('<AddCategory />', () => {
+describe('<AddCategoryInput />', () => {
     beforeEach(() => {
         setup();
     });
@@ -26,7 +26,7 @@ describe('<AddCategory />', () => {
 
         fireEvent.submit(form);
 
-        expect(setCategories).not.toHaveBeenCalled();
+        expect(onAddCategory).not.toHaveBeenCalled();
     });
 
     it('should call setCategories on submit when value is not empty', () => {
@@ -40,8 +40,8 @@ describe('<AddCategory />', () => {
 
         fireEvent.submit(form);
 
-        expect(setCategories).toHaveBeenCalledTimes(1);
-        expect(setCategories).toHaveBeenCalledWith(expect.any(Function));
+        expect(onAddCategory).toHaveBeenCalledTimes(1);
+        expect(onAddCategory).toHaveBeenCalledWith(newValue);
         expect(input.getAttribute('value')).toBe('');
     });
 });
