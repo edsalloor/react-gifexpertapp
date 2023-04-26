@@ -24,13 +24,13 @@ describe('useFetchGifs', () => {
             result = hook.result;
         });
 
-        const { data, loading } = result.current;
-        expect(loading).toBe(true);
+        const { data, isLoading } = result.current;
+        expect(isLoading).toBe(true);
         expect(data).toStrictEqual([]);
 
         await waitFor(() => {
-            const { data, loading } = result.current;
-            expect(loading).toBe(false);
+            const { data, isLoading } = result.current;
+            expect(isLoading).toBe(false);
             expect(data).toStrictEqual({ data: mockedFetchGifs });
         });
     });

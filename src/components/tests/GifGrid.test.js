@@ -19,7 +19,7 @@ describe('<GifGrid />', () => {
     it('should render when loading is true', () => {
         useFetchGifs.mockReturnValue({
             data: [],
-            loading: true
+            isLoading: true
         });
         setup();
 
@@ -44,7 +44,7 @@ describe('<GifGrid />', () => {
         }];
         useFetchGifs.mockReturnValue({
             data: gifs,
-            loading: false
+            isLoading: false
         });
 
         setup();
