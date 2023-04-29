@@ -1,10 +1,11 @@
 import { render, screen } from '@testing-library/react';
-import useFetchGifs from '../../hooks/useFetchGifs';
-import GifGrid from '../GifGrid';
 
-jest.mock('../../hooks/useFetchGifs');
+import GifGrid from 'components/GifGrid';
+import useFetchGifs from 'hooks/useFetchGifs';
 
-jest.mock('../GifGridItem', () => ({
+jest.mock('hooks/useFetchGifs');
+
+jest.mock('components/GifGridItem', () => ({
     __esModule: true,
     default: () => <div>GifGridItem</div>,
 }));

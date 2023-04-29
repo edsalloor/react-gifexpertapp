@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import AddCategoryInput from '../AddCategoryInput';
+
+import AddCategoryInput from 'components/AddCategoryInput';
 
 const onAddCategory = jest.fn(() => {});
 

@@ -1,6 +1,7 @@
 import { renderHook, waitFor } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
-import useFetchGifs from '../useFetchGifs';
+
+import useFetchGifs from 'hooks/useFetchGifs';
 
 const mockedFetchGifs = [{
     id: 'testId1',

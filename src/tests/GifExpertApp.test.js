@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import GifExpertApp from '../GifExpertApp';
+
+import GifExpertApp from 'GifExpertApp';
 
 jest.mock('../components/AddCategoryInput', () => ({
     __esModule: true,

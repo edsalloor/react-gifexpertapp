@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import GifGridItem from '../GifGridItem';
+
+import GifGridItem from 'components/GifGridItem';
 
 const setup = props => render(<GifGridItem {...props} />);
 
