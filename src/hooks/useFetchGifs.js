@@ -3,20 +3,21 @@ import { useEffect, useState } from 'react';
 import { getGifs } from 'helpers/getGifs';
 
 const useFetchGifs = category => {
-    const [state, setState] = useState({
-        data: [],
-        isLoading: true
-    });
+  const [state, setState] = useState({
+    data: [],
+    isLoading: true
+  });
 
-    useEffect(() => {
-        getGifs(category)
-            .then(imgs => setState({
-                data: imgs,
-                isLoading: false
-            }));
-    }, [category]);
+  useEffect(() => {
+    getGifs(category).then(imgs =>
+      setState({
+        data: imgs,
+        isLoading: false
+      })
+    );
+  }, [category]);
 
-    return state;
+  return state;
 };
 
 export default useFetchGifs;

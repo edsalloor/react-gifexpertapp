@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import { AddCategoryInput, GifGrid } from 'components';
 
-const GifExpertApp = ({ initialCategories=[] }) => {
+const GifExpertApp = ({ initialCategories = [] }) => {
   const [categories, setCategories] = useState(initialCategories);
 
   const onAddCategory = newCategory => {
@@ -14,21 +14,23 @@ const GifExpertApp = ({ initialCategories=[] }) => {
       remainingCategories.splice(categoryIndex, 1);
       setCategories([newCategory, ...remainingCategories]);
       return;
-    };
+    }
 
     setCategories([newCategory, ...categories]);
   };
 
-  return (<>
-    <h1>Gif Expert App</h1>
-    <AddCategoryInput onAddCategory={onAddCategory}/>
-    <hr/>
-    <ol>
-      {categories.map((category) => (
-        <GifGrid key={category} category={category}/>
-      ))}
-    </ol>
-  </>)
+  return (
+    <>
+      <h1>Gif Expert App</h1>
+      <AddCategoryInput onAddCategory={onAddCategory} />
+      <hr />
+      <ol>
+        {categories.map(category => (
+          <GifGrid key={category} category={category} />
+        ))}
+      </ol>
+    </>
+  );
 };
 
 GifExpertApp.propTypes = {
