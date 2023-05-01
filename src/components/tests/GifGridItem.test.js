@@ -19,8 +19,8 @@ describe('<GifGridItem />', () => {
     expect(img).toBeInTheDocument();
     expect(pTitle).toBeInTheDocument();
 
-    expect(img.getAttribute('alt')).toBe(title);
-    expect(img.getAttribute('src')).toBe(url);
+    expect(img.alt).toBe(title);
+    expect(img.src).toBe(url);
   });
 
   it('should have animation', () => {
