@@ -1,7 +1,7 @@
-const API_KEY = 'BOc13Ba3AGquU7qfJnnTIt2ncMvCU8Sr';
+import { GIPHY_API_KEY } from 'config';
 
 export const getGifs = async category => {
-  const queryParameters = `api_key=${API_KEY}&q=${encodeURI(category)}&limit=${10}`;
+  const queryParameters = `api_key=${GIPHY_API_KEY}&q=${encodeURI(category)}&limit=${10}`;
   const url = `https://api.giphy.com/v1/gifs/search?${queryParameters}`;
 
   const response = await fetch(url);
