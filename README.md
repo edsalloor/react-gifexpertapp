@@ -23,6 +23,7 @@
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
         <li><a href="#running-locally">Running Locally</a></li>
+        <li><a href="#running-tests">Running Tests</a></li>
       </ul>
     </li>
   </ol>
@@ -79,6 +80,12 @@ See the App running [here][GifExpertApp-url].
 ### Running Locally
    ```sh
    npm start
+   ```
+
+
+### Running Tests
+   ```sh
+   npm test
    ```
 
 
